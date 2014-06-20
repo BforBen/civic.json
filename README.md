@@ -6,7 +6,7 @@ This standard is still being refined.
 
 Civic.json is a metadata standard for civic technology projects that is intended to complement project information in a github repository.  This repo contains documents that specify the keys and values that make up the civic.json data standard, and provides information about the scope, mission, and background of the standard.
 
-civic.json exists to create an api-accessible set of project attributes that complements the attributes already associatd with a github repository.  These can be used to power an API-driven community projects list, such as Chicago's (http://opengovhacknight.org/projects.html) or New York City's (http://projects.betanyc.us/#!/).  
+civic.json exists to create an api-accessible set of project attributes that complements the attributes already associatd with a github repository.  These can be used to power an API-driven community projects list, such as Chicago's (http://opengovhacknight.org/projects.html) or New York City's (http://projects.betanyc.us/#!/).
 
 civic.json looks like this:
 
@@ -25,5 +25,28 @@ civic.json looks like this:
 	        "categories": [
 	                {"category": "Community"},
 	                {"category": "Education"}
+	        ]
+	        "owner": {
+	        	"name": "Brighton and Hove Council",
+	        	"type": "Local council"
+	        	"@id": "http://gov.uk/councils/brighton"
+	        }
+	        "deployments": [
+	        	{
+	        		"name": "Brighton",
+	        		"@id": "http://budgetsimulator.com/brighton-and-hove"
+	        	}
+	        ]
+	        "serviceCategories" [
+	        	{
+	        		"name": "Waste",
+	        		"@id": "http://example.com/services/waste",
+	        	},
+	        ]
+	       	"technologies" [
+	        	{
+	        		"name": "Ruby on Rails",
+	        		"@id": "http://rubyonrails.org",
+	        	},
 	        ]
 	}
