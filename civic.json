@@ -16,25 +16,25 @@
         ],
         "owner": {
             "name": "Brighton and Hove Council",
-            "type": "Local council"
+            "type": "Local council",
             "@id": "http://gov.uk/councils/brighton"
-        }
+        },
         "deployments": [
             {
                 "name": "Brighton",
                 "@id": "http://budgetsimulator.com/brighton-and-hove"
             }
-        ]
+        ],
         "serviceCategories" [
             {
                 "name": "Waste",
                 "@id": "http://example.com/services/waste",
             },
-        ]
+        ],
         "technologies" [
             {
                 "name": "Ruby on Rails",
-                "@id": "http://rubyonrails.org",
+                "@id": "http://rubyonrails.org"
             },
         ]
 }
