@@ -11,9 +11,7 @@ Civic.json is a metadata standard for civic technology projects that is intended
 
 In 2013, civic Technologists at Chicago's Opengov Hacknight created a "hands-off" projects page using the github API.  In the world of civic hacking, projects come and go, and there is a risk of user-maintained projects pages to become stale.  The intent was to make a "stupid simple" projects page, where all of the data came from github repositories, where "...humans will be responsible for one thing: deciding what gets tracked."  
 
-The standard set of api-queryable attributes on a github repo includes name, description, contributors, creation and update info, etc, but is missing several key elements that would be useful to a projects listing.  Among these are a thumbnail photo, category tags, type of project(web, mobile, policy doc, dataset, etc).  
-
-Civic.json is meant to provide a standard set of metadata that resides in a common location in all repos and is accessible via the github api.  Individual project owners can create and update civic.json at will, so the projects pages can remain hands-off.
+On the 20th June 2014, the LocalGov Digital Makers created an adaptation of civic.json to extend the metadata available and to try and apply more common structure around the categorisation and linking of the data.
 
 In theory, if civic technology groups adopt this standard, it will be possible to aggregate nationwide, regional, or topic-specific lists of civic tech projects.
 
@@ -30,23 +28,23 @@ In theory, if civic technology groups adopt this standard, it will be possible t
    * `"Alpha"` - Brainstorming phase
    * `"Beta"` - Brainstorming phase
    * `"Production"` - Finished Product, development ongoing
-   * `"Archival"` - Finished Product, development ongoing
-		
+   * `"Sunset"` - Finished Product, development ceasing
+   * `"Archival"` - Finished Product, development ceased
 2. `thumbnailUrl` - a url to an image associated with the project listing
-3. `bornAt` - text indicating the name of the event the project was conceived at, if any.  Any text is allowed.
-4. `geography` - text indicating the city, state, county, or other geographic entity this project is relevant to.  Any text is allowed.
+3. `bornAt` - text indicating the name of the event or place the project was conceived at, if any.  Any text is allowed.
+4. `geography` - text indicating the town, city, county, or other geographic entity this project is relevant to.  Any text is allowed.
 
-		examples: "NYC", "Greater Baltimore", "South Boston"
+		examples: "UK", "London", "Shorditch"
 5. `politicalEntity` - text indicating the political entity the project is relevant to. Any text is allowed.
 
-		examples: "NYC City Coucil", "Chicago Department of Public Works"
-
+		examples: "Westminster City Coucil", "DWP"
 6. `type` - text describing the type of project.  Any text is allowed, but a selection from the recommended values is advised:
 
    * `"Web App"`
    * `"Mobile App"`
    * `"Policy Document"`
    * `"Dataset"`
+   * `"Schema"`
 
 7. `needs` - an array of "need" objects.  There is no limit to the number of needs included in a project.
 8. `need` - text indicating a need of the project.  This can be a skillset that is needed, or any other resource.  Any text is allowed.
@@ -58,27 +56,92 @@ In theory, if civic technology groups adopt this standard, it will be possible t
 
 		examples:  "Land Use", "Transportation", "Politics", "Financial", "Open Data"
 
+11. `owner` - object indicating the person or organisation that the project is owned by.
+
+	* `"name"`: the name of the person or organisation
+
+		examples: "Guildford Borough Council", "DCLG", "DWP"
+
+	* `"type"`: the type of organisation 
+
+		examples: "Local council", "Government Agency"
+		
+	* `"@id"`: the uri of the named resource
+
+		example: "http://somewhere/some#thing"
+		
+12. `deployments` - array of objects detailing name and uri of where the project is deployed
+
+	* `"name"`: the name of the deployment
+
+		examples: "Guildford Borough Council"
+		
+	* `"@id"`: the uri of the named deployment
+
+		example: "http://somewhere/some#where"
+		
+13. `serviceCategories` - array of objects describing associated services for the project
+
+	* `"name"`: the name of the service
+
+		examples: "Planning", "Housing", "Pensions"
+		
+	* `"@id"`: the uri of the named services
+
+		example: "http://id.esd.org.uk/service/1057"
+14. `technologies` - array of objects describing technologies used in the project
+
+	* `"name"`: the name of the tech
+
+		examples: "AngularJS", "Ruby on Rails", "PHP"
+		
+	* `"@id"`: the uri of the named tech
+
+		example: "http://angularjs.org"
 
 ## Example civic.json
-
+```
 	{
-	    "status": "Beta",
-	    "thumbnailUrl": "http://www.skyspaceinternational.com/yahoo_site_admin/assets/images/NYC_Skyline_Thumb.97220225.jpg",
-	     "bornAt": "BetaNYC Hacknights",
-	    "geography": "NYC",
-	    "politicalEntity":"",
-	    "type":"Web App",
-	    "needs": [
-	        {"need": "Web Designer"},
-	        {"need": "Node Dev"},
-	        {"need": "Angularjs Dev"}
-	    ],
-	    "categories": [
-	        {"category": "Community"},
-	        {"category": "Education"}
-	    ]
-	}
-
+        "status": "Beta",
+        "thumbnailUrl": "https://avatars.githubusercontent.com/u/6362924?s=64",
+        "bornAt": "LocalGovDigital Makers Hackday",
+        "geography": "UK",
+        "politicalEntity":"",
+        "type":"Web App",
+        "needs": [
+                {"need": "Web Designer"},
+                {"need": "Node Dev"},
+                {"need": "Angularjs Dev"}
+        ],
+        "categories": [
+                {"category": "Community"},
+                {"category": "Education"}
+        ]
+        "owner": {
+            "name": "Brighton and Hove Council",
+            "type": "Local council"
+            "@id": "http://gov.uk/councils/brighton"
+        }
+        "deployments": [
+            {
+                "name": "Brighton",
+                "@id": "http://budgetsimulator.com/brighton-and-hove"
+            }
+        ]
+        "serviceCategories" [
+            {
+                "name": "Waste",
+                "@id": "http://example.com/services/waste",
+            },
+        ]
+        "technologies" [
+            {
+                "name": "Ruby on Rails",
+                "@id": "http://rubyonrails.org",
+            },
+        ]
+}
+```
 
 ## Links
  *  [Opengovhacknight's projects page](http://opengovhacknight.org/projects.html)
