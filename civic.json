@@ -1,0 +1,40 @@
+{
+        "status": "Beta",
+        "thumbnailUrl": "https://avatars.githubusercontent.com/u/6362924?s=64",
+        "bornAt": "LocalGovDigital Makers Hackday",
+        "geography": "UK",
+        "politicalEntity":"",
+        "type":"Web App",
+        "needs": [
+                {"need": "Web Designer"},
+                {"need": "Node Dev"},
+                {"need": "Angularjs Dev"}
+        ],
+        "categories": [
+                {"category": "Community"},
+                {"category": "Education"}
+        ]
+        "owner": {
+            "name": "Brighton and Hove Council",
+            "type": "Local council"
+            "@id": "http://gov.uk/councils/brighton"
+        }
+        "deployments": [
+            {
+                "name": "Brighton",
+                "@id": "http://budgetsimulator.com/brighton-and-hove"
+            }
+        ]
+        "serviceCategories" [
+            {
+                "name": "Waste",
+                "@id": "http://example.com/services/waste",
+            },
+        ]
+        "technologies" [
+            {
+                "name": "Ruby on Rails",
+                "@id": "http://rubyonrails.org",
+            },
+        ]
+}
