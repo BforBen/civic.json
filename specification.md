@@ -37,7 +37,7 @@ In theory, if civic technology groups adopt this standard, it will be possible t
 		examples: "UK", "London", "Shorditch"
 5. `politicalEntity` - text indicating the political entity the project is relevant to. Any text is allowed.
 
-		examples: "Westminster City Coucil", "DWP"
+		examples: "Westminster City Council", "DWP"
 6. `type` - text describing the type of project.  Any text is allowed, but a selection from the recommended values is advised:
 
    * `"Web App"`
