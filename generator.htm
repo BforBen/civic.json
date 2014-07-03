@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>civic.json generator</title>
+    <link rel="stylesheet" href="//ajax.aspnetcdn.com/ajax/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>civic.json generator</h1>
+
+    <form class="form-horizontal" role="form">
+
+        <div class="form-group">
+            <label for="status" class="col-sm-2 control-label">Status</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="status" list="statuses" name="status" placeholder="e.g. Beta">
+                <datalist id="statuses">
+                    <option value="Ideation" label="Ideation - Brainstorming phase">
+                    <option value="Alpha" label="Alpha - Brainstorming phase">
+                    <option value="Beta" label="Beta - Brainstorming phase">
+                    <option value="Production" label="Production - Finished Product, development ongoing">
+                    <option value="Sunset" label="Sunset - Finished Product, development ceasing">
+                    <option value="Archival" label="Archival - Finished Product, development ceased">
+                </datalist>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="thumbnailUrl" class="col-sm-2 control-label">Thumbnail</label>
+            <div class="col-sm-10">
+                <input type="url" class="form-control" id="thumbnailUrl" name="thumbnailUrl" placeholder="e.g. https://avatars.githubusercontent.com/u/6362924?s=64">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="bornAt" class="col-sm-2 control-label">Born at</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="bornAt" name="bornAt" placeholder="e.g. LocalGovDigital Makers Hackday">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="geography" class="col-sm-2 control-label">Geography</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="geography" name="geography" placeholder="e.g. UK">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="politicalEntity" class="col-sm-2 control-label">Political entity</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="politicalEntity" name="politicalEntity" placeholder="e.g. Brighton and Hove Council">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="type" class="col-sm-2 control-label">Type</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" list="types" id="type" name="type" placeholder="e.g. Web App">
+                <datalist id="types">
+                    <option value="Web App">
+                    <option value="Mobile App">
+                    <option value="Policy Document">
+                    <option value="Dataset">
+                    <option value="Schema">
+                </datalist>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="needs" class="col-sm-2 control-label">Needs</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="needs" name="needs" placeholder="e.g. Web Designer">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="categories" class="col-sm-2 control-label">Categories</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="categories" name="categories" placeholder="e.g. Community">
+            </div>
+        </div>
+
+        <h2>Owner</h2>
+
+        <div class="form-group">
+            <label for="ownerName" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ownerName" name="owner.name" placeholder="e.g. Brighton and Hove Council">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ownerType" class="col-sm-2 control-label">Type</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ownerType" name="owner.type" placeholder="e.g. Local council">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ownerId" class="col-sm-2 control-label">ID</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="ownerId" name="owner.id" placeholder="e.g. http://gov.uk/councils/brighton">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="deployments" class="col-sm-2 control-label">Deployments</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="deployments" name="deployments" placeholder="Deployments">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="serviceCategories" class="col-sm-2 control-label">Service categories</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="serviceCategories" name="serviceCategories" placeholder="Service categories">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="technologies" class="col-sm-2 control-label">Technologies</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="technologies" name="technologies" placeholder="Technologies">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Generate civic.json</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
